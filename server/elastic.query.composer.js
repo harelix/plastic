@@ -1,0 +1,7 @@
+
+exports.QueryComposer = 
+{
+    getMapping : {
+
+    }
+};

@@ -1,5 +1,5 @@
 {
-  "name": "plastic - elastic forms for elastic search",
+  "name": "plastic",
   "version": "1.0.0",
   "description": "React & Express app capable of building HTML forms out of a Elastic search indices & types.",
   "scripts": {
@@ -14,6 +14,7 @@
     "publish-to-gh-pages": "npm run build:playground && gh-pages --dist build/",
     "publish-to-npm": "npm run build:readme && npm run dist && npm publish",
     "start": "node devServer.js",
+    "debug": "node --nolazy --inspect-brk=9229 devServer.js",
     "tdd": "cross-env NODE_ENV=test mocha --compilers js:babel-register --watch --require ./test/setup-jsdom.js test/**/*_test.js",
     "test": "cross-env NODE_ENV=test mocha --compilers js:babel-register --require ./test/setup-jsdom.js test/**/*_test.js"
   },

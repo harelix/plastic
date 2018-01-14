@@ -76,7 +76,7 @@ const SchemaBuilder = function(){
                 schema.properties[field.name] = this.selector(field)(field);
                 //ui widget 
                 let uiSchemaWidget = plastic.deriveUIElementFromNameOrType(field);
-                console.log(field);
+                
                 if(uiSchemaWidget){
                     uiSchema[field.name] = uiSchemaWidget;
                 }
@@ -87,7 +87,10 @@ const SchemaBuilder = function(){
 
     this.selector = (field) => {
         var a = this.semanticDetection(field.name);
-        let func = this.semanticDetection(field.name) || this.types[field.type];
+        let func = this.types[field.type];
+        if(field.type==='text' || field.type==='string' || field.type==='keyboard'){
+            func = this.semanticDetection(field.name) || this.types[field.type];
+        };
         return func || this.undefinedHandler;
     };
 

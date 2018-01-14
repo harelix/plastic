@@ -3,9 +3,8 @@ react-jsonschema-form
 
 [![Build Status](https://travis-ci.org/mozilla-services/react-jsonschema-form.svg)](https://travis-ci.org/mozilla-services/react-jsonschema-form)
 
-A simple [React](http://facebook.github.io/react/) component capable of building HTML forms out of a [JSON schema](http://jsonschema.net/) and using [Bootstrap](http://getbootstrap.com/) semantics by default.
+[React](http://facebook.github.io/react/) & Express app capable of building HTML forms out of 'elastic search' indices & types
 
-A [live playground](https://mozilla-services.github.io/react-jsonschema-form/) is hosted on gh-pages.
 
 ![](http://i.imgur.com/M8ZCES5.gif)
 

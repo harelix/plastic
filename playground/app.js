@@ -19,7 +19,7 @@ import "codemirror/theme/monokai.css";
 import "codemirror/theme/eclipse.css";
 
 import PropTypes from "prop-types";
-import { IndexSelector , TypesSelector } from '../src/plastic/components';
+import { IndexSelector , TypesSelector , SearchBox } from '../src/plastic/components';
 
 const log = type => console.log.bind(console, type);
 const fromJson = json => JSON.parse(json);
@@ -488,6 +488,7 @@ class App extends Component {
           <h1>Plastic - forms for elastic search</h1>
           <div className="row">
             <div className="col-sm-12">
+              <SearchBox />
               <IndexSelector onSelected={this.loadRemoteMappings} onDocumentSelected={this.onDocumentSelected}/>
             </div>
           </div>

@@ -26,9 +26,9 @@ exports.provider =  () => {
                 requestTimeout: 1000
               }, function (error) {
                 if (error) {
-                    callback(null,{message : 'elastic server not available.'})
+                    callback({message : 'elastic server not available.'})
                 } else {
-                    callback({message : ''},null)
+                    callback(null)
                 }
               });
         },

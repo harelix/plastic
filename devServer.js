@@ -36,6 +36,7 @@ app.use(function(req, res, next) {
 });
 
 
+
 app.use(require("webpack-dev-middleware")(compiler, {
   publicPath: webpackConfig.output.publicPath,
   noInfo: true
@@ -178,3 +179,10 @@ app.listen(port, host, function(err) {
 
   console.log(`Listening at http://${server}`);
 });
+
+
+
+app.use(function (err, req, res, next) {
+  console.error(err);
+  res.status(500).send({ error : err.error.client_message });
+})

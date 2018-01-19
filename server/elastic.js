@@ -1,13 +1,13 @@
 
 const elasticProvider = require('./elastic.provider');
-
+const Errors = require('./errors').default;
 
 
 exports.checkElasticStatus = (req, res, next) => {
     let client = elasticProvider.provider();
-    client.checkStatus((reponse, err) => {
+    client.checkStatus((err, reponse) => {
         if(err){
-            next({ err : err.message});
+            next({ error : Errors.ELASTIC.es_not_available});
         }else{
             next();
         }

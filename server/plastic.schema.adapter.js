@@ -1,7 +1,7 @@
 const PlasticUISchemaProvider = require('./plastic.ui.schema.provider').PlasticUISchemaProvider;
 
 const plastic = new PlasticUISchemaProvider();
- const PlasticSchemaAdapter = {
+exports.default = {
     mappingAdapter : (config = {}) => {
         return (req, res, next) => {
             
@@ -187,6 +187,3 @@ const SchemaBuilder = function(){
         //address : {},
     }; // add more values
 };
-
-
-exports.PlasticSchemaAdapter = PlasticSchemaAdapter;

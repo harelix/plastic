@@ -2,7 +2,7 @@
  
 
 
-const PlasticTransformer = {
+exports.default = {
     extractMapping : () => {
         return (req, res, next) => {
             let inidices = [];
@@ -27,6 +27,3 @@ const PlasticTransformer = {
         };
     }
 };
-
-
-exports.PlasticTransformer = PlasticTransformer;

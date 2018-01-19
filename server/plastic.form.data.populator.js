@@ -1,4 +1,4 @@
-const PlasticFormDataPopulator = {
+exports.default = {
     populate : (config = {}) => {
         return (req, res, next) => {
             
@@ -32,5 +32,3 @@ const PlasticFormDataPopulator = {
         };
     }
 };
-
-exports.PlasticFormDataPopulator = PlasticFormDataPopulator;

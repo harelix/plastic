@@ -1,4 +1,4 @@
-const PlasticFormDataAdapter = {
+exports.default = {
     adapter : () => {
         return (req, res, next) => {
             
@@ -23,6 +23,3 @@ const MappingBuilder = function(){
     }
 
 };
-
-
-exports.PlasticFormDataAdapter = PlasticFormDataAdapter;

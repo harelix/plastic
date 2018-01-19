@@ -23,7 +23,7 @@ exports.provider =  () => {
         checkStatus(callback){
             client.ping({
                 // ping usually has a 3000ms timeout
-                requestTimeout: 1000
+                requestTimeout: 3000
               }, function (error) {
                 if (error) {
                     callback({message : 'elastic server not available.'})

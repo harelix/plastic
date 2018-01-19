@@ -1,11 +1,17 @@
+const errors = require('./errors');
+
 exports.extractDocumentData = (filter, contentAwareWidgets) => {
     return (req, res, next) => {
         let { elasticResponse , uiSchema, schema } = req;
-        
-        let response = formatFormDataContents(filter(elasticResponse), 
-                                new contentAwareProcessorFunc(contentAwareWidgets, uiSchema, schema));
-        req.formData = response;
-        next();
+        try{
+            let response = formatFormDataContents(filter(elasticResponse), 
+                                    new contentAwareProcessorFunc(contentAwareWidgets, uiSchema, schema));
+            req.formData = response;
+            next();
+        }
+        catch(exception){
+            next(errors.FORMATTING);
+        }
     };
 };
 

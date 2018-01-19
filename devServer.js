@@ -13,13 +13,13 @@ const compiler = webpack(webpackConfig);
 const app = express();
 
 const RequestProvider  = require('./server/middleware/Cerberus');
-const plasticTransformer = require('./server/plastic.transformer').PlasticTransformer;
+const plasticTransformer = require('./server/plastic.transformer').default;
 const elastic = require("./server/elastic");
 const plastic = require("./server/plastic");
 const Cerberus = RequestProvider.Cerberus; 
-const plasticSchemaAdapter = require('./server/plastic.schema.adapter').PlasticSchemaAdapter;
-const plasticFormDataAdapter = require('./server/plastic.form.data.adapter').PlasticFormDataAdapter;
-const plasticFormDataPopulator = require('./server/plastic.form.data.populator').PlasticFormDataPopulator;
+const plasticSchemaAdapter = require('./server/plastic.schema.adapter').default;
+const plasticFormDataAdapter = require('./server/plastic.form.data.adapter').default;
+const plasticFormDataPopulator = require('./server/plastic.form.data.populator').default;
 const bodyParser = require('body-parser')
 
 

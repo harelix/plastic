@@ -1,11 +1,16 @@
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { ReactDOM, render } from "react-dom";
 import Form from "./components/Form";
-import routes from './routes';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import App from './app';
 
-export default Form;
-render(
-    <Router history={browserHistory} routes={routes} />,
-    document.getElementById('app')
-);
+render((
+  <Router>
+    <App />
+  </Router>
+), document.getElementById('app'));
+
 
 if (!String.prototype.format) {
     String.prototype.format = function() {

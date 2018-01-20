@@ -23,26 +23,21 @@ const plasticFormDataPopulator = require('./server/plastic.form.data.populator')
 const bodyParser = require('body-parser')
 
 
-app.use( bodyParser.json() );       // to support JSON-encoded bodies
-app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-  extended: true
-})); 
-
-
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
-
-
-
-app.use(require("webpack-dev-middleware")(compiler, {
-  publicPath: webpackConfig.output.publicPath,
-  noInfo: true
-}));
-
-app.use(require("webpack-hot-middleware")(compiler));
+app.disable('x-powered-by')
+    .use( bodyParser.json())       // to support JSON-encoded bodies
+    .use(bodyParser.urlencoded({     // to support URL-encoded bodies
+      extended: true
+    }))
+    .use(function(req, res, next) {
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+      next();
+    })
+    .use(require("webpack-dev-middleware")(compiler, {
+      publicPath: webpackConfig.output.publicPath,
+      noInfo: true
+    }))
+    .use(require("webpack-hot-middleware")(compiler));
 
 
 //-----------------------------------------------------
@@ -167,8 +162,9 @@ app.get("/favicon.ico", function(req, res) {
   res.status(204).end();
 });
 
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "playground", "index.html"));
+app.get("/*", function(req, res) {
+  //res.sendFile(path.join(__dirname, "playground", "index.html"));
+  res.sendFile(path.join(__dirname, "src", "index.html"));
 });
 
 app.listen(port, host, function(err) {

@@ -1,11 +1,19 @@
-import  React, {PropTypes} from 'react';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { render } from "react-dom";
+import { Link }  from 'react-router-dom';
 
-class App extends React.Component{
+import Sidebar from './plastic/components/sidebar/Sidebar';
+import Main  from './plastic/components/main/Main';
+
+
+class App extends Component{
     render(){
         return (
-            <div className="container-fluid">
+            <div>
                 <p>Plastic forms for Elastic search</p>
-                {this.props.children}
+                <Sidebar />
+                <Main /> 
             </div>
         );
     }

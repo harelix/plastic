@@ -11,7 +11,6 @@ render((
   </Router>
 ), document.getElementById('app'));
 
-
 if (!String.prototype.format) {
     String.prototype.format = function() {
       var args = arguments;

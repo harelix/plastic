@@ -62,10 +62,12 @@
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "babel-register": "^6.18.0",
+    "body-parser": "^1.18.2",
     "chai": "^3.3.0",
     "codemirror": "^5.30.0",
     "cross-env": "^2.0.1",
     "css-loader": "^0.23.1",
+    "elasticsearch": "^14.0.0",
     "eslint": "^4.9.0",
     "eslint-config-react-app": "^2.0.1",
     "eslint-plugin-flowtype": "^2.39.1",
@@ -83,6 +85,7 @@
     "json-loader": "^0.5.7",
     "lint-staged": "^3.3.1",
     "mocha": "^2.5.3",
+    "normalizr": "^3.2.4",
     "prettier": "^1.8.2",
     "react": "^15.5.0",
     "react-addons-test-utils": "^15.3.2",
@@ -97,10 +100,7 @@
     "toctoc": "^0.2.3",
     "webpack": "^1.13.3",
     "webpack-dev-middleware": "^1.8.4",
-    "webpack-hot-middleware": "^2.13.2",
-    "elasticsearch": "^14.0.0",
-    "normalizr": "^3.2.4",
-    "body-parser": "^1.18.2"
+    "webpack-hot-middleware": "^2.13.2"
   },
   "directories": {
     "test": "test"
